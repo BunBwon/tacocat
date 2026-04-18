@@ -2,20 +2,103 @@
 <head>
     <title>Tacocat</title>
     <style>
-        h1 {background-color:rgb(171, 58, 58);}
-        div {background-color:rgb(240, 114, 114);}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fde2e4;
+            color: #3b1f1f;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            padding: 24px;
+        }
+
+        h1 {
+            background-color: rgb(171, 58, 58);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            margin: 0;
+        }
+
         .tacocat {
             color: rgb(152, 241, 130);
             font-family: "bradley hand itc";
             font-size: 160%;
+        }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .toolbar label,
+        .toolbar button,
+        .toolbar input,
+        .toolbar select {
+            font-size: 1rem;
+        }
+
+        canvas {
+            border: 2px solid rgb(171, 58, 58);
+            border-radius: 12px;
+            background: white;
+            cursor: crosshair;
+        }
+
+        .info-box {
+            width: min(640px, 100%);
+            padding: 14px 18px;
+            border-radius: 14px;
+            background: rgba(240, 114, 114, 0.9);
+            color: white;
+            text-align: center;
+        }
+
+        .link-button {
+            font-size: 1rem;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 999px;
+            background: rgb(171, 58, 58);
+            color: white;
+            cursor: pointer;
         }
     </style>
     <script src="script.js"></script>
 </head>
 <body>
     <h1 class="tacocat">Tacocat</h1>
-    <div>Tacocat spelled backwards is <span class="tacocat">Tacocat</span>. also give me money</div>
-    <div id="demo">also subscribe</div>
-    <button id="ropuksgetter9000">FREE ROBUX</button>
+    <div class="info-box">Tap or click the canvas to draw. Select a shape and color, then click anywhere inside the canvas.</div>
+
+    <div class="toolbar">
+        <label for="shapeSelect">Shape:
+            <select id="shapeSelect">
+                <option value="rectangle">Rectangle</option>
+                <option value="circle">Circle</option>
+                <option value="line">Line</option>
+            </select>
+        </label>
+
+        <label for="colorPicker">Color:
+            <input id="colorPicker" type="color" value="#98f182">
+        </label>
+
+        <button id="clearCanvas" class="link-button" type="button">Clear Canvas</button>
+        <div id="drawHint">Click the canvas to draw a shape.</div>
+    </div>
+
+    <canvas id="drawingCanvas" width="640" height="360"></canvas>
+
+    <div class="info-box">Tacocat spelled backwards is <span class="tacocat">Tacocat</span>. also give me money</div>
+    <div id="demo">also subscribe &lt;3</div>
+    <button id="ropuksgetter9000" class="link-button" type="button">FREE ROBUX</button>
 </body>
 </html>
