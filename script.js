@@ -1,5 +1,5 @@
 function ROBUUX() {
-    document.getElementById("demo").innerHTML = "Hello JavaScript!";
+    document.getElementById("demo").innerHTML = "lul u poor lul";
 }    
 
 // Add event listener to the button after the DOM loads
